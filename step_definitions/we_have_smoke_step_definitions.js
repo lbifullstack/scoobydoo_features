@@ -1,19 +1,15 @@
+var assert = require('assert');
+
 var myStepDefinitionsWrapper = function () {
 
     this.World = require("../support/world.js").World;
 
-    this.Given(/^our application is running$/, function (callback) {
-        callback.pending();
-    });
-
-    this.When(/^i access the application status$/, function (callback) {
-
-        callback.pending();
-    });
-
-    this.Then(/^i should get back a valid response$/, function (callback) {
-
-        callback.pending();
+    this.Then(/^I should get back a valid response from the application$/, function (callback) {
+        var browser = this.browser;
+        browser.visit('http://localhost:3000', function(){
+            assert.equal(browser.text("title"), "Express");
+            callback();
+        });
     });
 
 };

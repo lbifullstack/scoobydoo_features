@@ -3,7 +3,5 @@ Feature: we have smoke
   As a developer
   I want run this acceptance test
 
-  Scenario: we have smoke
-    Given our application is running
-    When i access the application status
-    Then i should get back a valid response
+  Scenario: application is running
+    Then I should get back a valid response from the application
