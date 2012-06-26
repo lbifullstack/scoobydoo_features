@@ -1,7 +1,8 @@
 var myStepDefinitionsWrapper = function () {
 
-    this.Given(/^our application is running$/, function (callback) {
+    this.World = require("../support/world.js").World;
 
+    this.Given(/^our application is running$/, function (callback) {
         callback.pending();
     });
 
