@@ -1,5 +1,8 @@
+#require 'server'
+
 def app_path
-  ENV['APP_BUNDLE_PATH'] || (defined?(APP_BUNDLE_PATH) && APP_BUNDLE_PATH)
+  #ENV['APP_BUNDLE_PATH'] || (defined?(APP_BUNDLE_PATH) && APP_BUNDLE_PATH)
+  "../build/Debug-iphonesimulator/Frankified.app"
 end
 
 Given /^I launch the app$/ do
@@ -16,7 +19,7 @@ When /^i access the application status$/ do
 end
 
 Then /^i should get back a valid response$/ do
-  check_element_exists "view:'UILabel' marked:'Application Status ... Running"
+  check_element_exists "view:'UILabel' marked:'applicationStatus'"
 end
 
 Given /^I launch the app using iOS (\d\.\d)$/ do |sdk|
