@@ -1,8 +1,7 @@
-#require 'server'
+
 
 def app_path
-  #ENV['APP_BUNDLE_PATH'] || (defined?(APP_BUNDLE_PATH) && APP_BUNDLE_PATH)
-  "../build/Debug-iphonesimulator/Frankified.app"
+  ENV['APP_BUNDLE_PATH'] || (defined?(APP_BUNDLE_PATH) && APP_BUNDLE_PATH)
 end
 
 Given /^I launch the app$/ do
