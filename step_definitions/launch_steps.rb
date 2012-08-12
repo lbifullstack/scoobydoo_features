@@ -20,6 +20,8 @@ end
 
 Then /^i should get back a valid response$/ do
   check_element_exists "view:'UILabel' marked:'applicationStatus'"
+  status_text = frankly_map( "view:'UILabel' marked:'applicationStatus'", "text" )
+  status_text[0].should == "Application Status ... Running"
 end
 
 Given /^I launch the app using iOS (\d\.\d)$/ do |sdk|
